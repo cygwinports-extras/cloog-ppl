@@ -10,7 +10,7 @@ HOMEPAGE="http://www.cloog.org/"
 SRC_URI="ftp://gcc.gnu.org/pub/gcc/infrastructure/cloog-ppl-${VERSION}.tar.gz"
 
 PKG_NAMES="cloog-ppl libcloog0 libcloog-devel"
-cloog_ppl_CONTENTS="usr/bin/cloog.exe usr/share/"
+cloog_ppl_CONTENTS="usr/bin/cloog-ppl.exe usr/share/"
 libcloog0_SUMMARY="${SUMMARY} (runtime)"
 libcloog0_CONTENTS="usr/bin/cygcloog-0.dll"
 libcloog_devel_SUMMARY="${SUMMARY} (development)"
@@ -18,6 +18,6 @@ libcloog_devel_REQUIRES="libgmp-devel libppl-devel"
 libcloog_devel_CONTENTS="usr/include/${NAME}/ usr/lib/"
 
 # make this fully parallel-installable with cloog-isl
-CYGCONF_ARGS="--includedir=/usr/include/${NAME} --with-ppl"
+CYGCONF_ARGS="--program-suffix=-ppl --includedir=/usr/include/${NAME} --with-ppl"
 MAKEOPTS+=" LDFLAGS=-no-undefined"
 KEEP_LA_FILES="none"
